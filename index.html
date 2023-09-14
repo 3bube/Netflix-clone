@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="Icons/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Netflix</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+
+      .mb {
+        margin-top: 10rem;
+      }
+
+      .header {
+        background-image: url(Images/DE-en-20230911-popsignuptwoweeks-perspective_alpha_website_large.jpeg);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .border-last {
+        border-bottom: 10px solid #302e2e;
+      }
+
+      .header-heading {
+        font-weight: 800;
+      }
+
+      #inputemail {
+        position: relative;
+        min-width: 25%;
+        padding: 20px 40px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+      }
+
+      input[type="email"] {
+        background: rgba(0, 0, 0, 0.3);
+        color: #ddd;
+        font-size: 20px;
+      }
+
+      input[type="email"]:active {
+        outline: 2px solid #000;
+        transition: outline 0.8s;
+      }
+
+      ::placeholder {
+        color: #ddd;
+      }
+
+      .form-btn {
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #e40913;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .form-btn:hover,
+      .sign-in-btn:hover {
+        filter: brightness(80%);
+        transition: filter 0.5s;
+      }
+
+      .section-content {
+        margin: 0 300px;
+        height: 100vh;
+      }
+
+      .tv-img::before {
+        content: url(Images/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png);
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header border-last">
+      <div class="container-fluid">
+        <nav class="navbar">
+          <div class="container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0,0,256,256"
+              width="200px"
+              height="200px"
+            >
+              <g
+                fill="#e40913"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M4.75,19c0.6875,0 1.42188,0 2.10547,0c-0.00781,4.18359 -0.01562,8.37109 -0.01953,12.55469c-0.73828,0.07813 -1.54687,0.17969 -2.27734,0.26172c-0.9375,-2.62109 -1.51563,-4.25 -2.45703,-7.01172c0,2.80469 -0.00391,4.53125 -0.00391,7.33594c-0.68359,0.08594 -1.41406,0.17969 -2.09766,0.27734c0,-4.47266 0,-8.94531 0,-13.41797c0.76953,0 1.25,0 2.01953,0c0.91016,2.9375 1.81641,4.78516 2.71875,7.57813c0.00391,-2.86328 0.00781,-4.71484 0.01172,-7.57812zM14.73047,21.07422c0,-0.60547 -0.01172,-1.47266 -0.01172,-2.07422c-1.95312,0 -3.87891,0 -5.83203,0c-0.00781,4.125 -0.01562,8.25391 -0.02344,12.37891c1.94922,-0.17578 3.90234,-0.32031 5.85547,-0.43359c0.00391,-0.60547 0.00391,-1.47266 0.00391,-2.07422c-1.26953,0.07813 -2.48437,0.15625 -3.75391,0.24219c0.00391,-1.10547 0.00391,-2.02344 0.00781,-3.13281c0.92578,-0.01562 1.90234,-0.00391 2.84766,-0.01953c0,-0.60547 0.00391,-1.47656 0.00391,-2.08203c-0.9375,0.01563 -1.92578,0.01953 -2.84766,0.03516c0,-1.10937 0.00391,-1.71875 0.00781,-2.82812c0.57813,-0.00781 3.25781,-0.00781 3.74219,-0.01172zM16.08203,21.07031c0.09375,0 2.11719,0.01172 2.1875,0.01172c-0.00391,3.32813 -0.00781,6.36328 -0.01172,9.69141c0.6875,-0.02734 1.42188,-0.04687 2.10938,-0.0625c0,-3.30859 0.00391,-6.32812 0.00781,-9.63672c0.72656,-0.00391 1.47656,-0.00781 2.19922,-0.00781c0,-0.58984 0.00391,-1.46484 0.00391,-2.05469c-2.14062,0 -4.35547,0 -6.49219,0c0,0.59766 -0.00391,1.46094 -0.00391,2.05859zM29.80078,19c-1.95312,0 -3.90625,0 -5.85547,0c-0.00391,3.88281 -0.00391,7.76953 -0.00391,11.65234c0.22656,0 0.45703,0 0.6875,0c0.46484,0 0.9375,0 1.39844,0.00391c0,-1.64844 0,-3.15234 0,-4.80078c0.11328,0 2.57422,-0.00391 2.85156,0c0,-0.58984 0,-1.46875 -0.00391,-2.05859c-0.26172,-0.00391 -2.74219,0 -2.84766,0c0,-1.0625 -0.00391,-1.66016 -0.00391,-2.71875c0.23047,0 3.20703,0 3.77734,0.00391c0,-0.59375 0,-1.48828 0,-2.08203zM33.26172,28.77344c-0.00391,-3.35937 0.01563,-6.40625 0.00781,-9.76562c-0.68359,0 -1.41797,0 -2.10547,0c0.00781,3.92188 -0.01172,7.84375 -0.00781,11.76563c1.87109,0.07031 3.83984,0.14453 5.71094,0.27734c-0.00391,-0.60547 -0.00391,-1.47266 -0.00391,-2.07422c-1.18359,-0.07031 -2.41797,-0.15625 -3.60156,-0.20312zM38.61719,31.17578c0.6875,0.05469 1.39453,0.10938 2.08203,0.17188c0,-4.10937 0.00781,-8.22656 0,-12.33594c-0.6875,0 -1.42187,0 -2.10547,0c0.00781,4.05469 0.01563,8.10938 0.02344,12.16406zM47.24609,25.32813c0.89063,-2.10547 1.79688,-4.11328 2.72266,-6.31641c-0.75781,0 -1.53906,0 -2.30078,0c-0.57031,1.35938 -0.96094,2.23438 -1.50781,3.53125c-0.50781,-1.34766 -0.84766,-2.22266 -1.35937,-3.53125c-0.75781,0 -1.53906,0 -2.29687,0c0.83984,2.05078 1.60938,4.10547 2.46484,6.28516c-0.88672,2.08984 -1.79297,4.16797 -2.67969,6.17578c0.73438,0.07031 1.49609,0.17578 2.23047,0.25781c0.52734,-1.28906 1.00391,-2.28516 1.53516,-3.61328c0.52344,1.41406 1.00391,2.50781 1.53125,3.96484c0.73047,0.09766 1.68359,0.23438 2.41406,0.33594c-0.88672,-2.37109 -1.85937,-4.84375 -2.75391,-7.08984z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <a
+              style="background-color: #e40913; color: #fff"
+              class="btn btn-lg lead fw-bold sign-in-btn"
+              href="https://www.netflix.com/ng/login"
+              target="_blank"
+              >Sign in</a
+            >
+          </div>
+        </nav>
+      </div>
+      <div class="text-center text-white mb">
+        <h4 class="display-3 header-heading my-3">
+          Unlimited movies, TV shows, and more
+        </h4>
+        <p class="lead fs-3 fw-semibold header-paragraph my-3">
+          Watch anywhere. Cancel anytime.
+        </p>
+        <p class="lead fs-4 fw-semibold my-3">
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+
+        <div class="header-form my-5">
+          <input type="email" placeholder="Email address" id="inputemail" />
+          <button class="form-btn lead" type="submit">
+            Get Started<svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              data-mirrorinrtl="true"
+              class="default-ltr-cache-4z3qvp e1svuwfo1"
+              data-name="ChevronRight"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-black border-last">
+      <div
+        class="container-md section-content row align-items-center text-white"
+      >
+        <div class="col-md-12 col-lg-6">
+          <h2 class="display-2 fw-bolder my-4">Enjoy on your TV</h2>
+          <p class="fw-semibold lead" style="inline-size: 400px">
+            Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
+            players, and more.
+          </p>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <img class="tv-img" src="Images/tv.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black border-last">
+      <div
+        class="container-md section-content row align-items-center text-white"
+      >
+        <div class="col-md-12 col-lg-6">
+          <img src="Images/mobile-0819.jpeg" alt="" />
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <h2 class="display-2 fw-bolder my-4">
+            Download your shows to watch offline
+          </h2>
+          <p class="fw-semibold lead" style="inline-size: 400px">
+            Save your favorites easily and always have something to watch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black border-last">
+      <div
+        class="container-md section-content row align-items-center text-white"
+      >
+        <div class="col-md-12 col-lg-6">
+          <h2 class="display-2 fw-bolder my-4">Watch everywhere</h2>
+          <p class="fw-semibold lead" style="inline-size: 400px">
+            Stream unlimited movies and TV shows on your phone, tablet, laptop,
+            and TV.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black border-last">
+      <div
+        class="container-md section-content row align-items-center text-white"
+      >
+        <div class="col-md-12 col-lg-6">
+          <img
+            src="Images/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png"
+            alt=""
+          />
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <h2 class="display-2 fw-bolder my-4">Create profiles for kids</h2>
+          <p
+            class="fw-semibold lead overflow-hidden"
+            style="inline-size: 400px"
+          >
+            Send kids on adventures with their favorite characters in a space
+            made just for them—free with your membership.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black border-last">
+      <div class="container text text-center">
+        <h1 class="pt-5 pb-3 display-5 fw-bold text-white">
+          Frequently Asked Questions
+        </h1>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button bg-dark text-white fw-semibold fs-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                What is Netflix?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body bg-dark text-white fw-semibold">
+                Netflix is a streaming service that offers a wide variety of
+                award-winning TV shows, movies, anime, documentaries, and more
+                on thousands of internet-connected devices. You can watch as
+                much as you want, whenever you want without a single commercial
+                – all for one low monthly price. There's always something new to
+                discover and new TV shows and movies are added every week!
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-dark text-white fw-semibold fs-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                How much does Netflix cost?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body bg-dark text-white fw-semibold">
+                Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+                streaming device, all for one fixed monthly fee. Plans range
+                from ₦1,200 to ₦4,400 a month. No extra costs, no contracts.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-dark text-white fw-semibold fs-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Where can I watch?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body bg-dark text-white fw-semibold">
+                Watch anywhere, anytime. Sign in with your Netflix account to
+                watch instantly on the web at netflix.com from your personal
+                computer or on any internet-connected device that offers the
+                Netflix app, including smart TVs, smartphones, tablets,
+                streaming media players and game consoles. You can also download
+                your favorite shows with the iOS, Android, or Windows 10 app.
+                Use downloads to watch while you're on the go and without an
+                internet connection. Take Netflix with you anywhere.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-dark text-white fw-semibold fs-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                How do I cancel?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body bg-dark text-white fw-semibold">
+                Netflix is flexible. There are no pesky contracts and no
+                commitments. You can easily cancel your account online in two
+                clicks. There are no cancellation fees – start or stop your
+                account anytime.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-dark text-white fw-semibold fs-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                What can I watch on Netflix?
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body bg-dark text-white fw-semibold">
+                Netflix has an extensive library of feature films,
+                documentaries, TV shows, anime, award-winning Netflix originals,
+                and more. Watch as much as you want, anytime you want.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-dark text-white fw-semibold fs-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSix"
+                aria-expanded="false"
+                aria-controls="collapseSix"
+              >
+                Is Netflix good for kids?
+              </button>
+            </h2>
+            <div
+              id="collapseSix"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body bg-dark text-white fw-semibold">
+                The Netflix Kids experience is included in your membership to
+                give parents control while kids enjoy family-friendly TV shows
+                and movies in their own space. Kids profiles come with
+                PIN-protected parental controls that let you restrict the
+                maturity rating of content kids can watch and block specific
+                titles you don’t want kids to see.
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="pt-5 pb-3 fs-5 fw-bold text-white">
+          Ready to watch? Enter your email to create or restart your membership.
+        </h1>
+
+        <div class="header-form my-5">
+          <input type="email" placeholder="Email address" id="inputemail" />
+          <button class="form-btn lead" type="submit">
+            Get Started<svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              data-mirrorinrtl="true"
+              class="default-ltr-cache-4z3qvp e1svuwfo1"
+              data-name="ChevronRight"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
